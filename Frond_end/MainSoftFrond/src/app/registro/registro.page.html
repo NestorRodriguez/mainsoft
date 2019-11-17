@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro Usuario </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="registro(forma)" #forma="ngForm">
+    <ion-grid class="contenido">
+      <ion-row padding>
+        <ion-col>
+          <ion-item>
+            <ion-input type="text" required ngModel #nombre="ngModel" name="nombre" maxLength="200" minLength="3"
+              placeholder="Nombre"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-input type="number" required ngModel #documento="ngModel" name="documento" maxLength="200"
+              minLength="3" placeholder="Documento"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row padding>
+        <ion-col>
+          <ion-item>
+            <ion-input type="text" required ngModel #email="ngModel" name="email" maxLength="200" minLength="3"
+              placeholder="Correo"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-input type="number" required ngModel #telefono="ngModel" name="telefono" maxLength="200" minLength="3"
+              placeholder="Telefono"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-item>
+        <ion-textarea placeholder="Ingrese la descripción..." padding></ion-textarea>
+      </ion-item>
+      <ion-button color="primary" type="submit" expand="" [disabled]="!forma.valid" size="block" class="boton"
+        size="block" padding>REGISTRAR</ion-button>
+    </ion-grid>
+  </form>
+
+
+</ion-content>
