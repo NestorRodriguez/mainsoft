@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro Oferta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="registroOfert(forma)" #forma="ngForm">
+    <div class="contenido">
+      <ion-item>
+        <ion-input type="text" required ngModel #nombreOfert="ngModel" name="nombreOfert" maxLength="200" minLength="3"
+          placeholder="Nombre Oferta"></ion-input>
+      </ion-item>
+    </div>
+
+    <div class="descripcion"> 
+      <ion-item class="textarea">
+        <ion-textarea rows="10" placeholder="Ingrese la descripción de la Oferta..."></ion-textarea>
+      </ion-item>
+
+      <ion-button color="primary" type="submit" expand="" [disabled]="!forma.valid" size="block" class="boton"
+        size="block" padding>REGISTRAR</ion-button>
+    </div>
+
+  </form>
+
+</ion-content>
