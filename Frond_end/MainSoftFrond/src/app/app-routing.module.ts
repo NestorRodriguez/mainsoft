@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'registro-ofert', loadChildren: './registro-ofert/registro-ofert.module#RegistroOfertPageModule' },
   { path: 'consult-ofert', loadChildren: './consult-ofert/consult-ofert.module#ConsultOfertPageModule' },
   { path: 'consult-usuarios', loadChildren: './consult-usuarios/consult-usuarios.module#ConsultUsuariosPageModule' },
+  { path: 'detalle-usuario', loadChildren: './detalle-usuario/detalle-usuario.module#DetalleUsuarioPageModule' },
 ];
 
 @NgModule({
