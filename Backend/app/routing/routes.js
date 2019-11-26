@@ -8,9 +8,12 @@
 const profile = require('./api/profile');
 const user = require('./api/user');
 const query = require('./api/query');
+const query = require('./api/usuario');
+
 
 module.exports = [
     profile,
     user,
-    query
+    query,
+    usuario
 ];
