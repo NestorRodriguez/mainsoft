@@ -6,10 +6,10 @@ const routing = Routing(new Controller());
 const Auth = require('../../middlewares/auth');
 
 router
-    .get('/registroOferta', Auth.isAuth, routing.all)
-    .get('/registroOferta/:id', Auth.isAuth, routing.one)
-    .post('/registroOferta', Auth.isAuth, routing.create)
-    .put('/registroOferta/:id', Auth.isAuth, routing.update)
-    .delete('/registroOferta/:id', Auth.isAuth, routing.destroy);
+    .get('/registroOferta', routing.all)
+    .get('/registroOferta/:id', routing.one)
+    .post('/registroOferta', routing.create)
+    .put('/registroOferta/:id', routing.update)
+    .delete('/registroOferta/:id', routing.destroy);
 
 module.exports = router;

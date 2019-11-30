@@ -11,6 +11,8 @@ const query = require('./api/query');
 const usuario = require('./api/usuario');
 const roles = require('./api/roles');
 const registroOferta = require('./api/registroOferta');
+const aplicarOferta = require('./api/aplicarOferta');
+
 
 
 module.exports = [
@@ -19,5 +21,6 @@ module.exports = [
     query,
     usuario,
     roles,
-    registroOferta
+    registroOferta,
+    aplicarOferta
 ];

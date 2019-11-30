@@ -3,7 +3,7 @@ const Hash = require('../utils/hash');
 const Validator = require('../utils/validator');
 
 
-module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
+module.exports = (sequelize, DataTypes) => sequelize.define('roles', {
 
     id: {
         type: DataTypes.INTEGER.UNSIGNED,

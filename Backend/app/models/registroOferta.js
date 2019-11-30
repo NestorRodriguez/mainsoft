@@ -4,7 +4,7 @@ const Hash = require('../utils/hash');
 
 
 
-module.exports = (sequelize, DataTypes) => sequelize.define('profiles', {
+module.exports = (sequelize, DataTypes) => sequelize.define('registro_oferta', {
     id: {
         type: DataTypes.INTEGER.UNSIGNED,
         autoIncrement: true,
