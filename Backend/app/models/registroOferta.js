@@ -1,4 +1,7 @@
 const Validator = require('../utils/validator');
+const Hash = require('../utils/hash');
+
+
 
 
 module.exports = (sequelize, DataTypes) => sequelize.define('profiles', {

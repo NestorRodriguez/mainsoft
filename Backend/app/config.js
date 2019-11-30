@@ -10,8 +10,8 @@ module.exports = {
     appPath: path.dirname(__dirname),
     db: {
         user: "root",
-        access: "root",
-        database: "gaz",
+        access: "",
+        database: "mainsoft",
         host: "localhost",
         dialect: 'mysql',
         pool: {

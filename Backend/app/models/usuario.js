@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
 
     id: {
         type: DataTypes.INTEGER.UNSIGNED,
-        autoIncrement: true,
+        // autoIncrement: true,
         primaryKey: true,
     },
 
@@ -33,6 +33,8 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
     },
 
     documento: {
+        type: DataTypes.INTEGER,
+        allowNull:false,
         validate: {
             notNull: {
                 msg: 'El numero de documento es requerido'
@@ -48,7 +50,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
 
     correo: {
         type: DataTypes.STRING(50),
-        allowNull: false,
+        allowNull:false,
         validate: {
             isEmail: {
                 args: true,
@@ -70,7 +72,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
     },
     telefono: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull:false,
         validate: {
             notNull: {
                 msg: 'perfil de usuario es requerido'
@@ -87,7 +89,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
 
     contraseña: {
         type: DataTypes.STRING(12),
-        allowNull: false,
+        allowNull:false,
         validate: {
             notNull: {
                 msg: 'contraseña es requerida'

@@ -8,12 +8,16 @@
 const profile = require('./api/profile');
 const user = require('./api/user');
 const query = require('./api/query');
-const query = require('./api/usuario');
+const usuario = require('./api/usuario');
+const roles = require('./api/roles');
+const registroOferta = require('./api/registroOferta');
 
 
 module.exports = [
     profile,
     user,
     query,
-    usuario
+    usuario,
+    roles,
+    registroOferta
 ];
