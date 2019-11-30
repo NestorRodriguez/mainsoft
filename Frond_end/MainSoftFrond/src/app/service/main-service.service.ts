@@ -47,12 +47,20 @@ export class MainServiceService {
     return this.http.get(this.urlAplicarOferta);
   }
 
-  setAplicacionOferta(data: any){
+  setAplicacionOferta(data: any) {
     return this.http.post(this.urlAplicarOferta, data);
   }
 
+  setAplicacionOfertaid(id: String) {
+    return this.http.get(`${this.urlAplicarOferta}/${id}`);
+  }
 
+  putAplicacionOferta(data: any) {
+    return this.http.put(this.urlAplicarOferta, data);
+  }
 
-
+  deleteAplicacionOferta(id: string) {
+    return this.http.delete(`${this.urlAplicarOferta}/${id}`);
+  }
 
 }
