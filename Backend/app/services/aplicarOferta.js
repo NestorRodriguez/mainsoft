@@ -8,13 +8,13 @@ class AplicarOfertaService extends Service {
     constructor() {
         const modelOptions = {
             create: {
-                attributes: ["id", "registro_oferta_id", "registro_oferta_id"]
+                attributes: ["id", "registro_oferta_id", "usuarios_id"]
             },
             one: {
-                attributes: ["id", "registro_oferta_id", "registro_oferta_id"]
+                attributes: ["id", "registro_oferta_id", "usuarios_id"]
             },
             all: {
-                attributes: ["id", "registro_oferta_id", "registro_oferta_id"]
+                attributes: ["id", "registro_oferta_id", "usuarios_id"]
             },
         };
         super(Model, modelOptions);

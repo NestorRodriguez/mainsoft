@@ -18,19 +18,19 @@ module.exports = (sequelize, DataTypes) => sequelize.define('registro_oferta', {
             notNull: {
                 msg: 'nombre es requerido'
             },
-            len: {
-                args: [5, 20],
-                msg: "nombre debe tener minimo 3 y máximo 20 caracteres"
-            },
+            // len: {
+            //     args: [5, 20],
+            //     msg: "nombre debe tener minimo 3 y máximo 20 caracteres"
+            // },
             customValidator(value) {
                 if (!value) {
                     throw new Error("nombre no debe estar vacío");
                 }
             },
-            isUnique: function (name, next) {
-                const self = this;
-                return Validator.isUnique('../models/profile.js', self, next, { name }, 'nombre está asociado a otro perfil');
-            }
+            // isUnique: function (name, next) {
+            //     const self = this;
+            //     return Validator.isUnique('../models/registroOferta.js', self, next, { nombre_oferta }, 'nombre está asociado a otro perfil');
+            // }
         }
     },
 
@@ -52,4 +52,6 @@ module.exports = (sequelize, DataTypes) => sequelize.define('registro_oferta', {
     estado: {
         type: DataTypes.STRING(20)
     }
+},{
+    timestamps: false,
 });

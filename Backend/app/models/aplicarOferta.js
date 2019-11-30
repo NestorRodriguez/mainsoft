@@ -17,4 +17,6 @@ module.exports = (sequelize, DataTypes) => sequelize.define('aplicar_oferta', {
         type: DataTypes.INTEGER.UNSIGNED,
     },
 
+},{
+    timestamps: false,
 });

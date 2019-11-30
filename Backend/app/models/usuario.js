@@ -20,10 +20,10 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
                 msg: 'El nombre es requerido'
             },
 
-            leng: {
-                args: [5, 100],
-                msg: 'El nombre se debe manejar con minimo de 5 a 100 caracteres'
-            },
+            // leng: {
+            //     args: [5, 100],
+            //     msg: 'El nombre se debe manejar con minimo de 5 a 100 caracteres'
+            // },
             customValidator(value) {
                 if (!value) {
                     throw new Error("El nombre no debe de estar vacio")
@@ -64,10 +64,10 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
                     throw new Error("El Documento no debe de estar vacio")
                 }
             },
-            isUnique: function (email, next) {
-                const self = this;
-                return Validator.isUnique('../models/usuario.js', self, next, { email }, 'correo electrónico está asociado a otro usuario');
-            }
+            // isUnique: function (email, next) {
+            //     const self = this;
+            //     return Validator.isUnique('../models/usuario.js', self, next, { email }, 'correo electrónico está asociado a otro usuario');
+            // }
         },
     },
     telefono: {
@@ -87,7 +87,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
         }
     },
 
-    contraseña: {
+    contrasena: {
         type: DataTypes.STRING(12),
         allowNull:false,
         validate: {
@@ -130,4 +130,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
         type: DataTypes.INTEGER.UNSIGNED,
         autoIncrement: true,
     },
+        
+},{
+    timestamps: false,
 });
