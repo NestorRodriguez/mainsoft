@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainServiceService } from '../service/main-service.service';
 
 @Component({
   selector: 'app-registro-ofert',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroOfertPage implements OnInit {
 
-  constructor() { }
+  constructor(private queries: MainServiceService) { }
 
   ngOnInit() {
+  }
+
+  getQuery(){
+
+    const datos = {
+      query: 'profiles',
+      params: {
+        active: true
+      }
+    }
+    this.queries.getQuery(datos).subscribe(data => {
+      console.log(data)
+    })
   }
 
 }

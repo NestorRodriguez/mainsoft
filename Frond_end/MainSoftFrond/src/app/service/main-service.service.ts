@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MainServiceService {
 
-  urlUsuarios = 'http://localhost:3000/api/v1.0/usuario';
-  urlRegistroOferta = 'http://localhost:3000/api/v1.0/registroOferta';
-  urlAplicarOferta = 'http://localhost:3000/api/v1.0/aplicarOferta';
-  urlRoles = 'http://localhost:3000/api/v1.0/roles';
-
+  urlUsuarios = `${environment.url}/usuario`;
+  urlRegistroOferta = `${environment.url}/registroOferta`;
+  urlAplicarOferta = `${environment.url}/aplicarOferta`;
+  urlRoles = `${environment.url}/roles`;
+  urlQueries = `${environment.url}/queries/query`;
 
   constructor(public http: HttpClient) { }
 
@@ -48,6 +49,10 @@ export class MainServiceService {
 
   setAplicacionOferta(data: any) {
     return this.http.post(this.urlAplicarOferta, data);
+  }
+
+  getQuery(data: any) {
+    return this.http.post(this.urlQueries, data);
   }
 
   setAplicacionOfertaid(id: String) {

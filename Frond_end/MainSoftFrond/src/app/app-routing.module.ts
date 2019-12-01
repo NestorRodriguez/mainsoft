@@ -11,6 +11,8 @@ const routes: Routes = [
   { path: 'consult-ofert', loadChildren: './consult-ofert/consult-ofert.module#ConsultOfertPageModule' },
   { path: 'consult-usuarios', loadChildren: './consult-usuarios/consult-usuarios.module#ConsultUsuariosPageModule' },
   { path: 'detalle-usuario', loadChildren: './detalle-usuario/detalle-usuario.module#DetalleUsuarioPageModule' },
+  { path: 'seleccion-usuario', loadChildren: './seleccion-usuario/seleccion-usuario.module#SeleccionUsuarioPageModule' },
+  { path: 'ofertas', loadChildren: './ofertas/ofertas.module#OfertasPageModule' },
 ];
 
 @NgModule({
