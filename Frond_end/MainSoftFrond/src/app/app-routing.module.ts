@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'detalle-usuario', loadChildren: './detalle-usuario/detalle-usuario.module#DetalleUsuarioPageModule' },
   { path: 'seleccion-usuario', loadChildren: './seleccion-usuario/seleccion-usuario.module#SeleccionUsuarioPageModule' },
   { path: 'ofertas', loadChildren: './ofertas/ofertas.module#OfertasPageModule' },
+  { path: 'consult-aplicaciones', loadChildren: './consult-aplicaciones/consult-aplicaciones.module#ConsultAplicacionesPageModule' },
 ];
 
 @NgModule({
