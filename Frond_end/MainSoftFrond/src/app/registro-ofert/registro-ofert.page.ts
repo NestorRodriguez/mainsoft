@@ -8,22 +8,37 @@ import { MainServiceService } from '../service/main-service.service';
 })
 export class RegistroOfertPage implements OnInit {
 
-  constructor(private queries: MainServiceService) { }
+  constructor(private service: MainServiceService) { }
 
+  // registro: any = {
+  //   nombre_oferta: '',
+  //   descripcion_oferta: ''
+  // }
+  public nombre_oferta: any;
+  public descripcion_oferta: any;
   ngOnInit() {
   }
-
-  getQuery(){
-
-    const datos = {
-      query: 'profiles',
-      params: {
-        active: true
-      }
+  guardarRegistro() {
+    const data = {
+      nombre_oferta: this.nombre_oferta,
+      descripcion_oferta: this.descripcion_oferta
     }
-    this.queries.getQuery(datos).subscribe(data => {
-      console.log(data)
+    this.service.setRegistroOfertas(data).subscribe(Response => {
+      console.log(Response);
     })
   }
+
+  // getQuery(){
+
+  //   const datos = {
+  //     query: 'profiles',
+  //     params: {
+  //       active: true
+  //     }
+  //   }
+  //   this.queries.getQuery(datos).subscribe(data => {
+  //     console.log(data)
+  //   })
+  // }
 
 }

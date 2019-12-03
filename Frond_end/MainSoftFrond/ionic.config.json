@@ -1,5 +1,7 @@
 {
   "name": "MainSoftFrond",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

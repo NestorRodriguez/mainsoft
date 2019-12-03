@@ -1,28 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <!-- <ion-buttons slot="start">
       <ion-back-button defaultHref="/seleccion"></ion-back-button>
-    </ion-buttons>
+    </ion-buttons> -->
     <ion-title>Registro Oferta</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <form (ngSubmit)="registroOfert(forma)" #forma="ngForm">
+  <form (ngSubmit)="guardarRegistro(forma)" #forma="ngForm">
     <div class="contenido">
       <ion-item>
-        <ion-input type="text" required ngModel #nombreOfert="ngModel" name="nombreOfert" maxLength="200" minLength="3"
+        <ion-input type="text" [(ngModel)]="nombre_oferta" name="nombreOfert" maxLength="200" minLength="3"
           placeholder="Nombre Oferta"></ion-input>
       </ion-item>
     </div>
 
     <div class="descripcion">
       <ion-item class="textarea">
-        <ion-textarea rows="10" placeholder="Ingrese la descripción de la Oferta..."></ion-textarea>
+        <!-- <ion-input type="text" [(ngModel)]="descripcion_oferta" name="descripcionOfert" maxLength="200" minLength="3"
+          placeholder="Nombre Oferta"></ion-input> -->
+        <ion-textarea rows="10" [(ngModel)]="descripcion_oferta" placeholder="Ingrese la descripción de la Oferta..."
+          name="descripcionOfert">
+        </ion-textarea>
       </ion-item>
 
-      <ion-button color="primary" type="submit" expand="" [disabled]="!forma.valid" class="boton"
-        size="block" padding>REGISTRAR</ion-button>
+      <ion-button color="primary" type="submit" expand="" [disabled]="!forma.valid" class="boton" size="block" padding>
+        REGISTRAR</ion-button>
     </div>
 
   </form>
