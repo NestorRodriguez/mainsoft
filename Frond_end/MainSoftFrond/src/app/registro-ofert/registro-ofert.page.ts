@@ -10,10 +10,6 @@ export class RegistroOfertPage implements OnInit {
 
   constructor(private service: MainServiceService) { }
 
-  // registro: any = {
-  //   nombre_oferta: '',
-  //   descripcion_oferta: ''
-  // }
   public nombre_oferta: any;
   public descripcion_oferta: any;
   ngOnInit() {

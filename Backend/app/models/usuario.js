@@ -123,7 +123,6 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
 
     carga_hv: {
         type: DataTypes.STRING(100),
-        allowNull: false,
     },
 
     roles_id: {

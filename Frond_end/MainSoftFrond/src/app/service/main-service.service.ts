@@ -15,9 +15,25 @@ export class MainServiceService {
   urlQueries = `${environment.url}/queries/query`;
 
   constructor(public http: HttpClient) { }
-
+  //usuarios
   getUsuarios() {
     return this.http.get(this.urlUsuarios);
+  }
+
+  setUsuarios(data: any) {
+    return this.http.post(this.urlUsuarios, data);
+  }
+
+  getUsuariosId(id: string) {
+    return this.http.get(`${this.urlUsuarios}/${id}`);
+  }
+
+  putUsuarios(data: any) {
+    return this.http.put(this.urlUsuarios, data);
+  }
+
+  deleteUsuarios(id: string) {
+    return this.http.delete(`${this.urlUsuarios}/${id}`);
   }
 
   // Ofertas
@@ -66,5 +82,4 @@ export class MainServiceService {
   deleteAplicacionOferta(id: string) {
     return this.http.delete(`${this.urlAplicarOferta}/${id}`);
   }
-
 }

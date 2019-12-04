@@ -1,0 +1,4 @@
+[2019-12-03T19:48:50.808] [ERROR] trappsporte - [action: validation][msg: nombre es requerido, El campo es requerido][line:17:C:\Users\ADMIN\Desktop\SENA ENTREGA\SEGUNDO TRIMESTRE\Proyecto\mainsoft\Backend\app\utils\validator.js]
+[2019-12-03T20:55:38.789] [ERROR] trappsporte - [action: validation][msg: contraseña es requerida, usuarios.carga_hv cannot be null][line:17:C:\Users\ADMIN\Desktop\SENA ENTREGA\SEGUNDO TRIMESTRE\Proyecto\mainsoft\Backend\app\utils\validator.js]
+[2019-12-03T20:56:13.495] [ERROR] trappsporte - [action: validation][msg: contraseña es requerida, usuarios.carga_hv cannot be null][line:17:C:\Users\ADMIN\Desktop\SENA ENTREGA\SEGUNDO TRIMESTRE\Proyecto\mainsoft\Backend\app\utils\validator.js]
+[2019-12-03T21:06:15.631] [ERROR] trappsporte - [action: validation][msg: usuarios.carga_hv cannot be null][line:17:C:\Users\ADMIN\Desktop\SENA ENTREGA\SEGUNDO TRIMESTRE\Proyecto\mainsoft\Backend\app\utils\validator.js]
