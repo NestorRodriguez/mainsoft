@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainServiceService } from '../service/main-service.service';
 
 @Component({
   selector: 'app-consult-usuarios',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultUsuariosPage implements OnInit {
 
-  constructor() { }
+  constructor(private service: MainServiceService) { }
+
+  arrayPost:any;
+
 
   ngOnInit() {
+    this.obtenerUsuarios();
   }
 
+  obtenerUsuarios(){
+    this.service.getUsuarios().subscribe(Response => {
+      this.arrayPost = Response;
+    })
+  }
 }
