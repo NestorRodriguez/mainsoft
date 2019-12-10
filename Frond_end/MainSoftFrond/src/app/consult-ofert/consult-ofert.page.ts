@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainServiceService } from '../service/main-service.service';
 
 @Component({
   selector: 'app-consult-ofert',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultOfertPage implements OnInit {
 
-  constructor() { }
+  constructor(private service: MainServiceService) { }
+
+  arrayPost:any;
 
   ngOnInit() {
+    this.obtenerOfertas();
+    console.log("Prueba de servicio",Response);
+  }
+
+
+  obtenerOfertas(){
+    this.service.getRegistroOfertas().subscribe(Response => {
+      this.arrayPost = Response;
+    })
   }
 
 }

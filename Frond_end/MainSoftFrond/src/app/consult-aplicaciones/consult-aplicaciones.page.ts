@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MainServiceService } from '../service/main-service.service';
 
 @Component({
   selector: 'app-consult-aplicaciones',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultAplicacionesPage implements OnInit {
 
-  constructor() { }
+  constructor(private service: MainServiceService) { }
+
+  arrayPost: any;
+
 
   ngOnInit() {
+    this.obtenberAplicados();
+  }
+
+  obtenberAplicados() {
+    this.service.getAplicacionOferta().subscribe(Response => {
+      this.arrayPost = Response;
+    })
   }
 
 }

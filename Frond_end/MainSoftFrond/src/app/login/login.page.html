@@ -1,14 +1,14 @@
 <ion-content padding>
   <ion-img class="image" src="assets/logo-dark.png"></ion-img>
 
-  <form (ngSubmit)="login(forma)" #forma="ngForm">
+  <form (ngSubmit)="validarUsuario(forma)" #forma="ngForm">
     <ion-list class="form">
       <ion-item>
-        <ion-input type="text" required ngModel #email="ngModel" name="email" placeholder="Usuario" maxLength="200"
+        <ion-input type="text" [(ngModel)]="nombre" name="email" placeholder="Usuario" maxLength="200"
           minLength="3"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="password" required ngModel #clave="ngModel" name="clave" placeholder="Contraseña"
+        <ion-input type="password" [(ngModel)]="contrasena" name="clave" placeholder="Contraseña"
           maxLength="200" minLength="3"></ion-input>
       </ion-item>
       <ion-button color="primary" type="submit" expand="" [disabled]="!forma.valid" class="boton" size="block">INGRESAR

@@ -125,7 +125,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define('usuarios', {
         type: DataTypes.STRING(100),
     },
 
-    roles_id: {
+    idProfile: {
         type: DataTypes.INTEGER.UNSIGNED,
         autoIncrement: true,
     },
