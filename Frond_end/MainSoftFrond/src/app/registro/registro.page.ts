@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MainServiceService } from '../service/main-service.service';
+import { Platform } from '@ionic/angular';
+import { FileTransfer } from '@ionic-native/file-transfer/ngx';
+import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
+import { File } from '@ionic-native/File/ngx';
 
 @Component({
   selector: 'app-registro',
@@ -8,7 +13,8 @@ import { MainServiceService } from '../service/main-service.service';
 })
 export class RegistroPage implements OnInit {
 
-  constructor(private service: MainServiceService) { }
+  constructor(private service: MainServiceService, private platform: Platform, private file: File, private ft: FileTransfer,
+    private fileOpener: FileOpener, private document: DocumentViewer) { }
 
   public nombre: any;
   public documento: any;
@@ -37,6 +43,22 @@ export class RegistroPage implements OnInit {
     this.service.setUsuarios(data).subscribe(Response => {
       console.log(Response);
     })
+  }
+
+  openLocalPdf() {
+    let filePath = this.file.applicationDirectory + 'www/assets';
+    if (this.platform.is('android')) {
+      let fakeName = Date.now();
+      this.file.copyFile(filePath, '5-tools.pdf', this.file.dataDirectory, `${fakeName}.pdf`).then(result => {
+        this.fileOpener.open(result.nativeURL, 'application/pdfx');
+      });
+    } else {
+      const options: DocumentViewerOptions = {
+        title: 'PDF'
+      }
+      this.document.viewDocument(`${filePath}/5-tools.pdf`, 'application/pdf', options);
+    }
+
   }
 
 

@@ -51,6 +51,10 @@
         <ion-textarea rows="5" placeholder="Ingrese la descripción..." padding [(ngModel)]="descripcion"
           name="descripcionRegistro"></ion-textarea>
       </ion-item>
+
+      <ion-item>
+        <ion-button expand="full" (click)="openLocalPdf()">Cargar Hoja de vida</ion-button>
+      </ion-item>
       <ion-button color="primary" type="submit" expand="" [disabled]="!forma.valid" size="block" class="boton"
         size="block" padding>REGISTRAR</ion-button>
     </ion-grid>
